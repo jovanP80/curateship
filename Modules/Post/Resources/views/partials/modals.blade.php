@@ -1,6 +1,8 @@
 <!-- 👇 Full Screen Modal -->
 <div class="custom-modal modal modal--animate-translate-down flex flex-center bg-contrast-higher bg-opacity-90% padding-md js-modal custom-modal-hide-body-scroll" id="modal-add-article">
   <div class="modal__content height-100% tabs js-tabs width-100% max-width-sm bg radius-md shadow-md flex flex-column">
+    <form action="{{ url('admin/posts/store') }}" id="modal-form-add-post" class="modal-form flex flex-column height-100%" method="post">
+      @csrf
       <header class="bg-contrast-lower padding-y-sm padding-x-md flex items-center justify-between">
         <!-- 👇 Tabs -->
         <nav class="tabs">
@@ -31,10 +33,12 @@
 
               <div class="grid gap-sm">
                 <label class="form-label margin-bottom-xxs" for="input-name">Enter Your Title</label>
-                <input class="form-control width-100%" type="text" name="input-name" id="input-name" required>
+                <input class="form-control width-100%" type="text" name="title" id="title">
+                <div role="alert" class="form-error-msg"></div> <!-- /.form-error-msg--is-visible -->
               <div>
 
               <div id="editorjs" class="form-control"></div><!-- /#ajax-add-blog-form -->
+              <div role="alert" class="form-error-msg"></div> <!-- /.form-error-msg--is-visible -->
             </div>
           </section>
 
@@ -88,19 +92,18 @@
 
           <!--Tab3 Content-->
           <section id="tab1Panel3" class="padding-top-md js-tabs__panel">
-            <form>
-              <fieldset class="margin-bottom-md">
-                <legend class="form-legend">Form Legend</legend>
+            <fieldset class="margin-bottom-md">
+              <legend class="form-legend">Form Legend</legend>
 
-                <div class="grid gap-sm">
-                    <label class="form-label margin-bottom-xxs" for="input-name">SEO Page Title</label>
-                    <input class="form-control width-100%" type="text" name="input-name" id="input-name" required>
-                  <div>
+              <div class="grid gap-sm">
+                  <label class="form-label margin-bottom-xxs" for="input-name">SEO Page Title</label>
+                  <input class="form-control width-100%" type="text" name="seo" id="seo">
+                  <div role="alert" class="form-error-msg"></div> <!-- /.form-error-msg--is-visible -->
+                <div>
 
-                  </div>
                 </div>
-              </fieldset>
-            </form>
+              </div>
+            </fieldset>
           </section>
         </div>
 
@@ -110,8 +113,8 @@
       <footer class="padding-y-sm padding-x-md bg shadow-md flex-shrink-0">
         <div class="flex justify-end gap-xs">
           <button type="button" class="btn btn--subtle js-modal__close">Cancel</button>
-          <button type="submit" class="btn btn--primary">Save</button>
-          <button type="submit" class="btn btn--primary">Publish</button>
+          <button type="submit" class="btn btn--primary" data-savetype="save">Save</button>
+          <button type="submit" class="btn btn--primary" data-savetype="publish">Publish</button>
         </div>
       </footer>
     </form>
@@ -122,9 +125,9 @@
 
 <div class="modal modal--search modal--animate-fade flex flex-center padding-md js-modal" id="modal-search">
   <div class="modal__content width-100% max-width-sm" role="alertdialog" aria-labelledby="modal-search-title" aria-describedby="">
-    <form class="full-screen-search">
+    <form class="full-screen-search" action="{{ url('admin/posts') }}" method="GET">
       <label for="search-input-x" id="modal-search-title" class="sr-only">Search</label>
-      <input class="reset full-screen-search__input" type="search" name="search-input-x" id="search-input-x" placeholder="Search...">
+      <input class="reset full-screen-search__input" type="search" name="q" id="search-input-x" value="{{ $q ?? '' }}" placeholder="Search...">
       <button class="reset full-screen-search__btn">
         <svg class="icon" viewBox="0 0 24 24">
           <title>Search</title>

@@ -14,4 +14,7 @@
 Route::prefix('admin')->group(function() {
     Route::get('posts', 'PostController@index');
     Route::get('posts/create', 'PostController@create');
+    Route::get('posts/delete/{id}', 'PostController@destroy');
+    Route::post('posts/store', 'PostController@store');
+    Route::post('posts/update/{id}', 'UsersController@update');
 });

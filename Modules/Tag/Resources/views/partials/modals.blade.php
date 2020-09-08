@@ -30,10 +30,24 @@
             <div>
 
               <div class="grid gap-sm">
-                <label class="form-label margin-bottom-xxs" for="input-name">Enter Your Title</label>
+                <label class="form-label margin-bottom-xxs" for="input-name">Enter Your Tag</label>
                 <input class="form-control width-100%" type="text" name="input-name" id="input-name" required>
               <div>
 
+                <label class="form-label margin-bottom-xxxs" for="selectThis">Select Tag category</label>
+                <div class="select">
+                  <select class="select__input form-control" name="selectThis" id="selectThis">
+                      <option value="0">Select</option>
+                      <option value="1">Origins</option>
+                      <option value="1">Artists</option>
+                      <option value="2">Characters</option>
+                      <option value="2">Tags</option>
+                      <option value="2">MISC</option>
+                  </select>
+                  <svg class="icon select__icon" aria-hidden="true" viewBox="0 0 16 16"><g stroke-width="1" stroke="currentColor"><polyline fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="15.5,4.5 8,12 0.5,4.5 "></polyline></g></svg>
+                </div>
+
+                <label class="form-label margin-bottom-xxs margin-top-md" for="input-name">Enter Your Tag Discription</label>
               <div id="editorjs" class="form-control"></div><!-- /#ajax-add-blog-form -->
             </div>
           </section>
@@ -93,7 +107,7 @@
                 <legend class="form-legend">Form Legend</legend>
 
                 <div class="grid gap-sm">
-                    <label class="form-label margin-bottom-xxs" for="input-name">SEO Page Title</label>
+                    <label class="form-label margin-bottom-xxs" for="input-name">Tag Page Title</label>
                     <input class="form-control width-100%" type="text" name="input-name" id="input-name" required>
                   <div>
 

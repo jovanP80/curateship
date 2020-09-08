@@ -107,9 +107,7 @@
               </div>
             </th>
             <td class="int-table__cell" aria-controls="modal-add-article">
-              <a
-              href="#0">Tag Title
-              </a>
+              <a href="#0">Tag Title</a>
             </td>
             <td class="int-table__cell">12324</td>
             <td class="int-table__cell">01/01/2021</td>

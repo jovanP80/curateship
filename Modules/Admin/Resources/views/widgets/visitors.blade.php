@@ -1,4 +1,4 @@
-<div class="stats-card bg radius-md padding-md shadow-xs col-5@sm">
+<div class="stats-card bg radius-md padding-md shadow-xs col-3@sm">
     <p class="color-contrast-medium">Visitors</p>
 
     <p class="text-xxl font-semibold color-contrast-higher">5,097</p>

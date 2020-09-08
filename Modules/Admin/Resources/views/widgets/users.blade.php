@@ -1,7 +1,7 @@
-<div class="stats-card bg radius-md padding-md shadow-xs col-5@sm">
-    <p class="color-contrast-medium">Visitors Today</p>
+<div class="stats-card bg radius-md padding-md shadow-xs col-3@sm">
+    <p class="color-contrast-medium">Subcribers Today</p>
 
-    <p class="text-xxl font-semibold color-contrast-higher">5,097</p>
+    <p class="text-xxl font-semibold color-contrast-higher">12</p>
 
     <span class="flex items-center color-success margin-top-xxs">
       <svg class="icon icon--sm margin-right-xxs" viewBox="0 0 24 24" aria-hidden="true">

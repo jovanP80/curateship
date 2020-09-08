@@ -1,7 +1,7 @@
-<div class="stats-card bg radius-md padding-md shadow-xs col-5@sm">
-    <p class="color-contrast-medium">Followers</p>
+<div class="stats-card bg radius-md padding-md shadow-xs col-3@sm">
+    <p class="color-contrast-medium">New Post</p>
 
-    <p class="text-xxl font-semibold color-contrast-higher">4,125</p>
+    <p class="text-xxl font-semibold color-contrast-higher">44</p>
 
     <span class="flex items-center color-error margin-top-xxs">
       <svg class="icon icon--sm flip-y margin-right-xxs" viewBox="0 0 24 24" aria-hidden="true">

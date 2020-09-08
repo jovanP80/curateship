@@ -48,14 +48,10 @@
         dataType: dataType,
         data: data,
         success : function(response) {
-          // console.log('Response', response);
-
           if (response.status == 'success') {
             // remove error messages
             $this.find('.form-error-msg').removeClass('form-error-msg--is-visible').html('');
-
             $this.find('.alert').addClass('alert--is-visible').find('.alert-message').html(response.message);
-
             $('#site-table-with-pagination-container').load(currentURL);
           }
 
@@ -66,7 +62,6 @@
         error: function(response, textStatus) {
           var jsonResponse = response.responseJSON;
           var errors = jsonResponse.errors;
-          // console.log(response);
 
           $.each( errors, function( key, value ) {
             $this.find('[name="'+key+'"]' + ' + .form-error-msg').addClass('form-error-msg--is-visible').html(value[0]);

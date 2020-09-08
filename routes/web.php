@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Post\Entities\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',function(){
-  return view('site1.index');
+    
+
+    return view('site1.index');
 });
 
 Route::get('/site1',function(){

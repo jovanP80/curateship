@@ -99,8 +99,8 @@
         </thead>
 
         <tbody class="int-table__body js-int-table__body">
-          
-            @foreach($posts as $key => $posts)
+            @foreach($posts as $key => $post)
+
               <tr class="int-table__row">
                 <th class="int-table__cell" scope="row">
                   <div class="custom-checkbox int-table__checkbox">
@@ -108,16 +108,14 @@
                     <div class="custom-checkbox__control" aria-hidden="true"></div>
                   </div>
                 </th>
-                <td class="int-table__cell" aria-controls="modal-add-article">
-                  <a
-                  href="#0">{{ $posts->title }}
-                  </a>
+                <td class="int-table__cell" aria-controls="modal-edit-article">
+                  <a href="{{ url('admin/posts/edit/' . $post->id) }}" data-update-url="{{ url('admin/posts/update/' . $post->id) }}" class="modal-trigger-edit-post" aria-controls="modal-edit-post" role="button">{{ $post->title }}</a>
                 </td>
-                <td class="int-table__cell">{{ $posts->getPostByUser->email ?? '' }}</td>
-                <td class="int-table__cell">{{ date('F m, Y H:i:s',strtotime($posts->created_at)) }}</td>
+                <td class="int-table__cell">{{ $post->getPostByUser->email ?? '' }}</td>
+                <td class="int-table__cell">{{ date('F m, Y H:i:s',strtotime($post->created_at)) }}</td>
                 <td class="int-table__cell text-center"><img src="{{ asset('assets/img/author-img-1.jpg') }}" alt="Author picture" width="40" height="40"></td>
                 <td class="int-table__cell text-center">
-                  <a href="{{ url('admin/posts/delete/'.$posts->id) }}">
+                  <a href="{{ url('admin/posts/delete/'.$post->id) }}">
                     <li class="menu-bar__item" role="menuitem" aria-controls="modal-name-1">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Delete Post</title><g stroke-linecap="square" stroke-linejoin="miter" stroke-width="1" transform="translate(0.5 0.5)" fill="#828282" stroke="#828282"><polyline fill="none" stroke="#828282" stroke-miterlimit="10" points="20,9 20,23 4,23 4,9 "></polyline> <line fill="none" stroke="#828282" stroke-miterlimit="10" x1="1" y1="5" x2="23" y2="5"></line> <line fill="none" stroke-miterlimit="10" x1="12" y1="12" x2="12" y2="18"></line> <line fill="none" stroke-miterlimit="10" x1="8" y1="12" x2="8" y2="18"></line> <line fill="none" stroke-miterlimit="10" x1="16" y1="12" x2="16" y2="18"></line> <polyline fill="none" stroke="#828282" stroke-miterlimit="10" points="8,5 8,1 16,1 16,5 "></polyline></g></svg>
                     </li>
@@ -183,8 +181,8 @@
 
         <li>
           <span class="pagination__jumper flex items-center">
-            <input aria-label="Page number" class="form-control" type="text" id="pageNumber" name="pageNumber" value="{{ $posts->current_page ?? 0 }}">
-            <em>of {{ $posts->last_page ?? 0 }}</em>
+            <input aria-label="Page number" class="form-control" type="text" id="pageNumber" name="pageNumber" value="{{ $posts->currentPage() ?? 0 }}">
+            <em>of {{ $posts->lastPage() ?? 0 }}</em>
           </span>
         </li>
 

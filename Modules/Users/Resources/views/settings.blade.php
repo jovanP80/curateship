@@ -81,6 +81,24 @@
                 </button>
               </div>
             </div><!-- /.margin-bottom-sm -->
+            <h1 class="margin-bottom-sm">Personal Info</h1>
+            <div class="margin-bottom-sm">
+              <label for="bio" class="form-label">Bio</label><!-- /.form-label -->
+                  {{-- <input type="text" class="form-control width-100%" id="bio" name="bio" value=""> --}}
+                  <textarea class="form-control width-100%" id="bio" name="bio" rows="5"></textarea>
+            </div>
+            <div class="margin-bottom-sm">
+              <label for="facebook_link" class="form-label">Facebook Link</label><!-- /.form-label -->
+                  <input type="text" class="form-control width-100%" id="facebook_link" placeholder="https://facebook.com/userSample" name="facebook_link" value="">
+            </div>
+            <div class="margin-bottom-sm">
+              <label for="instagram_link" class="form-label">Instagra Link</label><!-- /.form-label -->
+                  <input type="text" class="form-control width-100%" id="instagram_link" placeholder="https://instagram.com/userSample" name="instagram_link" value="">
+            </div>
+            <div class="margin-bottom-sm">
+              <label for="twitter_link" class="form-label">Twitter Link</label><!-- /.form-label -->
+                  <input type="text" class="form-control width-100%" id="twitter_link" placeholder="https://twitter.com/userSample" name="twitter_link" value="">
+            </div>
             <div class="margin-bottom-sm text-right">
               <button type="submit" class="btn btn--primary">Save</button><!-- /.btn btn--primary -->
             </div><!-- /.margin-bottom-sm -->

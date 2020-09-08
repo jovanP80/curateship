@@ -103,6 +103,54 @@
 
                 </div>
               </div>
+              <div class="grid gap-sm">
+                  <label class="form-label margin-bottom-xxs" for="input-name">Small Image Width</label>
+                  <input class="form-control width-100%" type="text" name="small_width" id="small_width">
+                  <div role="alert" class="form-error-msg"></div> <!-- /.form-error-msg--is-visible -->
+                <div>
+
+                </div>
+              </div>
+              <div class="grid gap-sm">
+                  <label class="form-label margin-bottom-xxs" for="input-name">Small Image Height</label>
+                  <input class="form-control width-100%" type="text" name="small_height" id="small_height">
+                  <div role="alert" class="form-error-msg"></div> <!-- /.form-error-msg--is-visible -->
+                <div>
+
+                </div>
+              </div>
+              <div class="grid gap-sm">
+                  <label class="form-label margin-bottom-xxs" for="input-name">Medium Image Width</label>
+                  <input class="form-control width-100%" type="text" name="medium_width" id="medium_width">
+                  <div role="alert" class="form-error-msg"></div> <!-- /.form-error-msg--is-visible -->
+                <div>
+
+                </div>
+              </div>
+              <div class="grid gap-sm">
+                  <label class="form-label margin-bottom-xxs" for="input-name">Medium Image Height</label>
+                  <input class="form-control width-100%" type="text" name="medium_height" id="medium_height">
+                  <div role="alert" class="form-error-msg"></div> <!-- /.form-error-msg--is-visible -->
+                <div>
+
+                </div>
+              </div>
+              <div class="grid gap-sm">
+                  <label class="form-label margin-bottom-xxs" for="input-name">Large Image Width</label>
+                  <input class="form-control width-100%" type="text" name="large_width" id="large_width">
+                  <div role="alert" class="form-error-msg"></div> <!-- /.form-error-msg--is-visible -->
+                <div>
+
+                </div>
+              </div>
+              <div class="grid gap-sm">
+                  <label class="form-label margin-bottom-xxs" for="input-name">Large Image Width</label>
+                  <input class="form-control width-100%" type="text" name="large_height" id="large_height">
+                  <div role="alert" class="form-error-msg"></div> <!-- /.form-error-msg--is-visible -->
+                <div>
+
+                </div>
+              </div>
             </fieldset>
           </section>
         </div>

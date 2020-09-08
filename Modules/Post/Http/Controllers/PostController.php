@@ -13,6 +13,8 @@ use Auth;
 use Carbon\Carbon;
 use Storage;
 
+use Spatie\Image\Image;
+use Spatie\Image\Manipulations;
 
 class PostController extends Controller
 {
@@ -67,33 +69,30 @@ class PostController extends Controller
      * @param Request $request
      * @return Renderable
      */
+    
+    private function getImageSize($path)
+    {
+        $width = Image::load($path)->getWidth();
+        $height = Image::load($path)->getHeight();
+
+
+        return ['width' => $width, 'height' => $height];
+    }
+
     public function store(Request $request)
     {
-        /*print_r($request->all());
-        echo "<br><br>";
-        print_r($_FILES);*/
-
-        /*$posts = Post::find(31);
-        $files = $request->file('file');
-        
-        foreach ($files as $file) {
-            $posts->addMedia($file)->toMediaCollection('file');
-        }*/
-        
-        /*$getPostMedia = Post::find(31);
-        $getPostMedia = $getPostMedia->getMedia('file');
-
-        foreach ($getPostMedia as $images) {
-            print_r($images->getUrl('thumb'));
-        }
-
-        die;*/
         // validate data
         $validateData = $request->validate([
             'title'     => ['required', 'string', 'max:255'],
             'seo'       => ['required', 'string', 'max:255', 'unique:posts,slug'],
-            'body'       => ['required'],
-            'savetype'  => ['required', 'string']
+            'body'      => ['required'],
+            'savetype'  => ['required', 'string'],
+            'small_width' => ['required', 'integer'],
+            'small_height' => ['required', 'integer'],
+            'medium_width' => ['required', 'integer'],
+            'medium_height' => ['required', 'integer'],
+            'large_width' => ['required', 'integer'],
+            'large_height' => ['required', 'integer']
         ]);
 
         $posts = new Post;
@@ -113,11 +112,27 @@ class PostController extends Controller
 
         if($saved && !empty($files)) {
             $post = Post::find($posts->id);
+
+            $sizes = [
+                'small' => [
+                    'width' => $request->small_width,
+                    'height' => $request->small_height
+                ],
+                'medium' => [
+                    'width' => $request->medium_width,
+                    'height' => $request->medium_height
+                ],
+                'large' => [
+                    'width' => $request->large_width,
+                    'height' => $request->large_height
+                ]
+            ];
+
             foreach ($files as $file) {
-                $post->addMedia($file)->toMediaCollection('post');
+                $post->addMedia($file)->withManipulations($sizes)->toMediaCollection('post');
             }
         }
-
+        die;
         $response = [
             'status'  => 'success',
             'message' => 'Post has been created.',
@@ -176,7 +191,13 @@ class PostController extends Controller
             'title'     => ['required', 'string', 'max:255'],
             'seo'       => ['required', 'string', 'max:255', 'unique:posts,slug'],
             'body'       => ['required'],
-            'savetype'  => ['required', 'string']
+            'savetype'  => ['required', 'string'],
+            'small_width' => ['required', 'integer'],
+            'small_height' => ['required', 'integer'],
+            'medium_width' => ['required', 'integer'],
+            'medium_height' => ['required', 'integer'],
+            'large_width' => ['required', 'integer'],
+            'large_height' => ['required', 'integer']
         ]);
 
         $post->title = $request->title;
@@ -189,6 +210,31 @@ class PostController extends Controller
         $post->created_by      = Auth::id();
         $post->updated_by      = Auth::id();
         $saved = $post->save();
+
+        $files = $request->file('file');
+
+        if($saved && !empty($files)) {
+            $post = Post::find($id);
+
+            $sizes = [
+                'small' => [
+                    'width' => $request->small_width,
+                    'height' => $request->small_height
+                ],
+                'medium' => [
+                    'width' => $request->medium_width,
+                    'height' => $request->medium_height
+                ],
+                'large' => [
+                    'width' => $request->large_width,
+                    'height' => $request->large_height
+                ]
+            ];
+
+            foreach ($files as $file) {
+                $post->addMedia($file)->withManipulations($sizes)->toMediaCollection('post');
+            }
+        }
 
         $response = [
             'status'  => 'success',

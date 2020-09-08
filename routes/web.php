@@ -17,9 +17,9 @@ use Modules\Post\Entities\Post;
 
 
 Route::get('/',function(){
-    
+    $posts = Post::where('is_published', 1)->get();
 
-    return view('site1.index');
+    return view('site1.index', compact('posts'));
 });
 
 Route::get('/site1',function(){

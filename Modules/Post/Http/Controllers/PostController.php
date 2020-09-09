@@ -132,7 +132,7 @@ class PostController extends Controller
                 $post->addMedia($file)->withManipulations($sizes)->toMediaCollection('post');
             }
         }
-        die;
+        
         $response = [
             'status'  => 'success',
             'message' => 'Post has been created.',

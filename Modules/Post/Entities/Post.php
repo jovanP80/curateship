@@ -41,7 +41,6 @@ class Post extends Model implements HasMedia
             ->width(50)
             ->height(50);
 
-        )
         foreach ($media->manipulations as $key => $manipulation) {
             if($key == 'small' || $key == 'medium' || $key == 'large') {
                 $this->addMediaConversion($key)->width($manipulation['width'])->height($manipulation['height']);    

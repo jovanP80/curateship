@@ -47,15 +47,6 @@
 
     });
 
-    // when pagination links are clicked, only load the table
-    $(document).on('click', '.site-table-pagination-ajax a', function(e){
-      e.preventDefault();
-      var $this = $(this);
-      var url = $this.attr('href');
-
-      $('#site-table-with-pagination-container').load(url);
-    });
-
     // change sort and order whenever a table header column is toggled
     $(document).on('click', '.js-int-table__cell--sort', function(){
       var $this = $(this);

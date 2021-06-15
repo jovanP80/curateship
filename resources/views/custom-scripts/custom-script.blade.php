@@ -35,20 +35,11 @@
     });
 
     // when pagination links are clicked, only load the table
-    $(document).on('click', '.site-table-pagination-ajax a, .site-table-filter a', function(e){
-      e.preventDefault();
-      var $this = $(this);
-      var url = $this.attr('href');
-
-      $('meta[name="current-url"]').attr('content', url);
-      // console.log(url);
-
+    $(document).on('click', '.site-load-content a, .site-table-filter a', function(e){
       $('.bulk-selected-ids').html(''); // remove hidden inputs on bulk select
       $('.table-total-selected').text('0'); // set counter to 0
 
       $('#site-table-limit-dropdown').find('[data-index="0"]').click(); // reset dropdown
-
-      $('#site-table-with-pagination-container').load(url);
     });
 
     // watch for change on the results limit dropdown
@@ -106,6 +97,17 @@
       $form.submit();
     });
 
+    $(document).on('click', '.site-load-content a', function (e) {
+      e.preventDefault();
+      var $this = $(this);
+      var url = $this.attr('href');
+
+      $('meta[name="current-url"]').attr('content', url);
+      console.log(url);
+
+      // loads page content inside this element
+      $('#site-table-with-pagination-container').load(url);
+    });
   })();
 </script>
 @endauth

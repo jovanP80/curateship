@@ -34,11 +34,11 @@
 
                 </fieldset>
 
-                {{-- 
-                <fieldset class="margin-top-xxl">
+                {{--
+                <fieldset class="ma rgin-top-xxl">
                   <h3 class="margin-bottom-sm">Image Setting</h3>
-              
-                  <div class="flex flex-wrap gap-md">
+
+                  <div class="flex fle              x-wrap gap-md">
                     @foreach(['maintain' => 'Maintain Aspect Ratio', 'crop' => 'Crop'] as $key => $image_setting)
                       <div>
                         <input class="radio" type="radio" value="{{ $key }}" name="image_setting" id="{{ $key }}"{{ (old('image_setting') == $key) ? ' checked' : ((!is_null($posts_settings) && $posts_settings->image_setting == $key) ? ' checked' : ((is_null($posts_settings) && $key == 'maintain') ? ' checked' : '')) }}>

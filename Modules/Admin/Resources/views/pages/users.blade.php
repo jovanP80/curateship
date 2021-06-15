@@ -1,10 +1,10 @@
 <div class="link-card">
     <div class="flex justify-between">
     <div class="margin-xs">
- 
+
       <div class="inline-flex items-baseline">
         <h1 class="text-md color-contrast-high padding-y-xxxxs margin-x-xs" for="selectThis">Users:</h1>
-        
+
         <div class="select inline-block js-select" data-trigger-class="reset text-sm color-contrast-high h1 inline-flex items-center cursor-pointer js-tab-focus">
           <select name="selectThis" id="selectThis" onchange="window.location=this.value">
             <optgroup label="Group 1">
@@ -13,14 +13,14 @@
               <option value="2">Suspended</option>
               <option value="3">Deleted</option>
             </optgroup>
-        
+
             <optgroup label="Group 2">
               <option value="3">Registered</option>
               <option value="4">Editors</option>
               <option value="5">Admin</option>
             </optgroup>
           </select>
-          
+
           <svg class="icon icon--xxxs margin-left-xxs" viewBox="0 0 8 8"><path d="M7.934,1.251A.5.5,0,0,0,7.5,1H.5a.5.5,0,0,0-.432.752l3.5,6a.5.5,0,0,0,.864,0l3.5-6A.5.5,0,0,0,7.934,1.251Z"/></svg>
         </div>
       </div>
@@ -53,7 +53,7 @@
             </svg>
           </li>
         </ul>
-        
+
         <ul class="menu-bar is-hidden js-int-table-actions__items-selected js-menu-bar">
           <li class="menu-bar__item menu-bar__item--trigger js-menu-bar__trigger" role="menuitem" aria-label="More options">
             <svg class="icon menu-bar__icon" aria-hidden="true" viewBox="0 0 16 16">
@@ -76,7 +76,7 @@
             <span class="menu-bar__label">Suspend</span>
           </li>
         </ul>
-        
+
       </li><!-- /.int-table-actions -->
     </ul><!-- /.flex flex-wrap gap-xs -->
     </div>
@@ -489,7 +489,7 @@
 
 <!-- 👇 Full Screen Modal -->
 <div class="custom-modal modal modal--animate-translate-down flex flex-center bg-contrast-higher bg-opacity-90% padding-md js-modal custom-disable-modal-close custom-modal-hide-body-scroll" id="modal-add-user">
-  <div class="modal__content height-100% tabs js-tabs width-100% max-width-xs bg radius-md shadow-md flex flex-column" role="alertdialog" aria-labelledby="modal-add-user-title" aria-describedby="modal-description-4">
+  <div class="modal__content height-100% tabs js-tabs width-100% max-width-xs bg radius-md shadow-md flex flex-column margin-top-xxxl" role="alertdialog" aria-labelledby="modal-add-user-title" aria-describedby="modal-description-4">
     <form action="{{ url('admin/users/store') }}" id="modal-form-add-user" class="modal-form flex flex-column height-100%" method="post"> @csrf
       <header class="bg-contrast-lower padding-y-sm padding-x-xs flex items-center justify-between">
         <!-- 👇 Tabs -->

@@ -1,6 +1,6 @@
 <aside class="sidebar sidebar--static@md col-3@md js-sidebar sidebar--right-on-mobile" data-static-class="sidebar--sticky-on-desktop z-index-1 bg-contrast-lowest" id="sidebar" aria-labelledby="sidebarTitle">
   <div class="sidebar__panel">
-  <nav class="sidenav padding-y-sm text-sm@md js-sidenav">
+  <nav class="sidenav padding-y-sm text-sm@md js-sidenav position-fixed">
     <div class="sidenav__label margin-bottom-xxxs">
       <span class="text-sm color-contrast-medium">Pages</span>
     </div>

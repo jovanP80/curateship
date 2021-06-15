@@ -16,8 +16,8 @@
 
                       <h1 class="js-input custom-input custom-input__title" placeholder="Title" target="title" required></h1>
                       <input type="hidden" id="title" name="title" value="">
-                      
-                      <div class="grid gap-sm">
+
+                                            <div class="grid gap-sm">
                         <div id="editorjs" data-target-input="#description" class="site-editor"></div>
                         <input type="hidden" name="description" id="description"/>
                       </div>
@@ -33,17 +33,17 @@
                               <svg class="icon" viewBox="0 0 24 24"><title>Close alert</title><g stroke-linecap="square" stroke-linejoin="miter" stroke-width="3" stroke="currentColor" fill="none" stroke-miterlimit="10"><line x1="19" y1="5" x2="5" y2="19"></line><line fill="none" x1="19" y1="19" x2="5" y2="5"></line></g></svg>
                             </button>
                           </div>
-                        </div>                        
-                        <label for="upload2" class="file-upload__label btn btn--primary">
+                        </div>
+                        <label for                        ="upload2" class="file-upload__label btn btn--primary">
                           <span class="flex items-center">
                             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><path  stroke-linecap="square" stroke-linejoin="miter" d="M2 16v6h20v-6"></path><path stroke-linejoin="miter" stroke-linecap="butt" d="M12 17V2"></path><path stroke-linecap="square" stroke-linejoin="miter" d="M18 8l-6-6-6 6"></path></g></svg>
                             <span class="margin-left-xxs file-upload__text file-upload__text--has-max-width">Upload Feature Image</span>
                           </span>
-                        </label> 
-                        <input type="file" class="file-upload__input" name="thumbnail" id="upload2" required>
-                      </div>                    
+                        </label>
+                        <input type="fil e" class="file-upload__input" name="thumbnail" id="upload2" required>
+                      </div>
 
-                    <div class="padding-top-xs">
+                    <div class="padding-t                    op-xs">
                       <div class="post-tag-wrp add-post-tag">
                         <div class="alert alert--error margin-top-sm js-alert" role="alert">
                           <div class="flex items-center justify-between">

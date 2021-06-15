@@ -39,7 +39,7 @@
 
   <!-- COMMON SCRIPTS -->
   @include('admin::partials.custom-script')
-
+  @include('custom-scripts.custom-script')
   <!-- MODULE SCRIPTS -->
   @stack('module-scripts')
 

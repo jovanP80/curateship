@@ -16,12 +16,12 @@
 
                       <h1 class="js-input custom-input custom-input__title" placeholder="Title" target="title" required></h1>
                       <input type="hidden" id="title" name="title" value="">
-                      
-                      <div class="grid gap-sm">
+
+                                            <div class="grid gap-sm">
                         <div id="editorjs" data-target-input="#description" class="site-editor"></div>
                         <input type="hidden" name="description" id="description"/>
-                      </div>                  
-                  </div><!-- /.padding-y-sm flex-grow overflow-auto -->
+                      </div>
+                  </d                  iv><!-- /.padding-y-sm flex-grow overflow-auto -->
 
                   <footer class="padding-y-sm bg flex-shrink-0">
                     <div class="flex justify-end gap-xs">

@@ -1,6 +1,6 @@
 <aside class="sidebar sidebar--static@md col-3@md js-sidebar sidebar--right-on-mobile" data-static-class="sidebar--sticky-on-desktop z-index-1 bg-contrast-lowest" id="sidebar" aria-labelledby="sidebarTitle">
   <div class="sidebar__panel">
-  <nav class="sidenav padding-y-sm text-sm@md js-sidenav">
+  <nav class="sidenav padding-y-sm text-sm@md js-sidenav position-fixed">
     <div class="sidenav__label margin-bottom-xxxs">
       <span class="text-sm color-contrast-medium">Posts</span>
     </div>
@@ -17,7 +17,7 @@
         <button class="reset sidenav__sublist-control js-sidenav__sublist-control js-tab-focus" aria-label="Toggle sub navigation">
           <svg class="icon" viewBox="0 0 12 12"><polygon points="4 3 8 6 4 9 4 3"/></svg>
         </button>
-      
+
         <ul class="sidenav__list">
           <li class="sidenav__item">
             <a href="{{ url('/dashboard?is_draft=1') }}" class="sidenav__link ajax-link">

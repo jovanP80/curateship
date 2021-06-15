@@ -47,7 +47,7 @@
       $('.table-total-selected').text('0'); // set counter to 0
 
       $('#site-table-limit-dropdown').find('[data-index="0"]').click(); // reset dropdown
-
+console.log(url)
       $('#site-table-with-pagination-container').load(url, function(){
         var $this = $(this);
         // Reload content for modal component issue
@@ -64,61 +64,6 @@
         );
 
       });
-    });
-
-    // watch for change on the results limit dropdown
-    $(document).on('change', '#site-table-limit', function() {
-      var $this = $(this);
-      var $submitForm = $this.closest('form');
-      /* $submitForm.submit();
-      return; */
-      var url = $submitForm.attr('action');
-      var method = $submitForm.attr('method');
-      var dataType = 'HTML';
-      var data = $submitForm.serialize();
-
-      $.ajax({
-        url: url,
-        method: method,
-        dataType: dataType,
-        data: data
-      })
-        .done(function(data) {
-          $('#site-table-with-pagination-container').html(data);
-        })
-        .fail(function(jqXHR, textStatus) {
-          // console.log('Request failed: ' + textStatus);
-          alert('Something went wrong. Please reload the page.');
-        })
-        .always(function() {});
-
-    });
-
-    // change sort and order whenever a table header column is toggled
-    $(document).on('click', '.js-int-table__cell--sort', function(){
-      var $this = $(this);
-      var sort = $this.data('sort')
-      var $checkedOrder = $this.find('input[type="radio"]:checked');
-      var order = (order == 'none') ? 'desc' : $checkedOrder.val();
-
-      $('input[name="sort"]').val(sort);
-      $('input[name="order"]').val(order);
-
-      // console.log(sort, order);
-    });
-
-    $(document).on('click', '.site-table-filter a', function(){
-      var $this = $(this);
-      $('.site-table-filter a').attr('aria-current', '');
-      $this.attr('aria-current', 'page');
-    });
-
-    // trigger for bulk select
-    $('[data-control-form]').on('click', function(){
-      var $this = $(this);
-      var $form = $($this.data('control-form'));
-
-      $form.submit();
     });
 
     // trigger for second menu

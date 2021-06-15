@@ -27,18 +27,18 @@
                     <div class="col-6@md">
                       <input class="form-control width-100%" type="text" value="{{ old('medium_width') ?: ((is_null($posts_settings)) ? '' : $posts_settings->medium_width) }}" name="medium_width" id="mediumWidth" placeholder="Enter width" required>
                     </div>
-                
-                    <div class="col-6@md">
+
+                    <div cla                ss="col-6@md">
                       <input class="form-control width-100%" type="text" value="{{ old('medium_height') ?: ((is_null($posts_settings)) ? '' : $posts_settings->medium_height) }}" name="medium_height" id="mediumHeight" placeholder="Enter height" required>
                     </div>
-              
+
                 </fieldset>
-                
-                {{-- 
-                <fieldset class="margin-top-xxl">
+
+                              {{--
+                                <fieldset class="ma rgin-top-xxl">
                   <h3 class="margin-bottom-sm">Image Setting</h3>
-              
-                  <div class="flex flex-wrap gap-md">
+
+                  <div class="flex fle              x-wrap gap-md">
                     @foreach(['maintain' => 'Maintain Aspect Ratio', 'crop' => 'Crop'] as $key => $image_setting)
                       <div>
                         <input class="radio" type="radio" value="{{ $key }}" name="image_setting" id="{{ $key }}"{{ (old('image_setting') == $key) ? ' checked' : ((!is_null($posts_settings) && $posts_settings->image_setting == $key) ? ' checked' : ((is_null($posts_settings) && $key == 'maintain') ? ' checked' : '')) }}>
@@ -61,9 +61,9 @@
                   <button class="btn btn--primary margin-top-md">Save</button>
                 </div>
               </form>
-              
+
           </div><!-- /.bg radius-md padding-md shadow-sm -->
-        </main>
+                      </main>
       </div><!-- /.grid -->
     </div><!-- /.container -->
   </section>

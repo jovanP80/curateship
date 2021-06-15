@@ -34,10 +34,10 @@
 
                 </fieldset>
 
-                {{-- 
+                {{--
                 <fieldset class="margin-top-xxl">
                   <h3 class="margin-bottom-sm">Image Setting</h3>
-              
+
                   <div class="flex flex-wrap gap-md">
                     @foreach(['maintain' => 'Maintain Aspect Ratio', 'crop' => 'Crop'] as $key => $image_setting)
                       <div>

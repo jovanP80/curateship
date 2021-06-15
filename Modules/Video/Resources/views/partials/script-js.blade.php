@@ -37,23 +37,4 @@
   })();
 </script>
 
-<script>
-  (function(){
-
-    // load content when user clicked on sidebar links
-    $(document).on('click', '.site-load-content a', function (e) {
-      e.preventDefault();
-      var $this = $(this);
-      var url = $this.attr('href');
-
-      $('meta[name="current-url"]').attr('content', url);
-      console.log(url);
-
-      // loads page content inside this element
-      $('#site-table-with-pagination-container').load(url);
-    });
-
-    console.log('loaded ???');
-  })();
-</script>
 @endauth
